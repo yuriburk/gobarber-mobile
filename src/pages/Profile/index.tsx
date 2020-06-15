@@ -130,7 +130,7 @@ const SignUp: React.FC = () => {
         const data = new FormData();
 
         data.append('avatar', {
-          type: 'image/jpeg',
+          type: response.type,
           filename: response.fileName,
           uri: response.uri,
         });
@@ -140,7 +140,7 @@ const SignUp: React.FC = () => {
           .then(({ data: responseData }) => updateUser(responseData));
       },
     );
-  }, [user.id, updateUser]);
+  }, [updateUser]);
 
   return (
     <>
